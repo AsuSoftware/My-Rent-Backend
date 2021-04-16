@@ -19,6 +19,14 @@ public class Boat {
     @GeneratedValue
     private UUID id;
 
+    @NotBlank
+    @Column(name = "brand")
+    private String brand;
+
+    @NotBlank
+    @Column(name = "model")
+    private String model;
+
     @NotNull
     @Column(name = "number_of_beds")
     private int numberOfBeds;

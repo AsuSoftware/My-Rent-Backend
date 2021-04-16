@@ -29,7 +29,7 @@ public class Motorcycle {
 
     @NotBlank
     @Column(name = "hp")
-    private String hp;
+    private int hp;
 
     @NotBlank
     @Column(name = "engine")

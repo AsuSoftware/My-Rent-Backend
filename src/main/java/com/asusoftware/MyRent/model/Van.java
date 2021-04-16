@@ -51,5 +51,8 @@ public class Van {
     @Column(name = "number_of_seats")
     private int numberOfSeats;
 
+    @NotNull
+    @Column(name = "fuel_capacity")
+    private long fuelCapacity;
 
 }
