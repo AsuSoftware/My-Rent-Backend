@@ -1,5 +1,6 @@
 package com.asusoftware.MyRent.model;
 
+import com.sun.istack.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "users")
+@Table(name = "posts")
 public class Post {
 
     @Id
@@ -32,4 +33,13 @@ public class Post {
     @NotBlank
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicle_id", referencedColumnName = "id")
+    private Vehicle vehicle;
+
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
+    private User user;
 }

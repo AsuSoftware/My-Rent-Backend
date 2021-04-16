@@ -26,4 +26,19 @@ public class Vehicle {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "boat_id", referencedColumnName = "id")
     private Boat boat;
+
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "van_id", referencedColumnName = "id")
+    private Van van;
+
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "motorcycle_id", referencedColumnName = "id")
+    private Motorcycle motorcycle;
+
+    @Nullable
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bicycle_id", referencedColumnName = "id")
+    private Bicycle bicycle;
 }

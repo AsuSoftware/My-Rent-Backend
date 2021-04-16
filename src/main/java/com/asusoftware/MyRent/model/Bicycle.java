@@ -12,8 +12,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "cars")
-public class Car {
+@Table(name = "bicycles")
+public class Bicycle {
 
     @Id
     @GeneratedValue
@@ -27,31 +27,12 @@ public class Car {
     @Column(name = "model")
     private String model;
 
-    @NotBlank
-    @Column(name = "hp")
-    private String hp;
-
-    @NotBlank
-    @Column(name = "engine")
-    private String engine;
-
     @NotNull
     @Column(name = "year")
     private LocalDateTime year;
-
-    @NotNull
-    @Column(name = "km")
-    private long km;
-
-    @NotNull
-    @Column(name = "number_of_doors")
-    private int numberOfDoors;
 
     @NotBlank
     @Column(name = "color")
     private String color;
 
-    @NotNull
-    @Column(name = "fuel_capacity")
-    private long fuelCapacity;
 }

@@ -1,5 +1,6 @@
 package com.asusoftware.MyRent.model;
 
+import com.sun.istack.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -43,4 +45,8 @@ public class User {
     @NotBlank
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Nullable
+    @OneToMany(mappedBy="user")
+    private List<Post> posts;
 }
